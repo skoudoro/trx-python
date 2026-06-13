@@ -523,8 +523,6 @@ def test_load_zip_with_local_header_extra_field():
             local_info = []
             extra = b"\x00\x00\x04\x00TEST"  # 8-byte extra field
 
-            # TRX stores arrays little-endian on disk; serialize the fixture
-            # explicitly so it is valid on big-endian hosts too (issue #113).
             for name, data in [
                 ("header.json", json.dumps(header).encode()),
                 ("positions.3.float32", positions.astype("<f4").tobytes()),
