@@ -525,8 +525,8 @@ def test_load_zip_with_local_header_extra_field():
 
             for name, data in [
                 ("header.json", json.dumps(header).encode()),
-                ("positions.3.float32", positions.tobytes()),
-                ("offsets.uint64", offsets.tobytes()),
+                ("positions.3.float32", positions.astype("<f4").tobytes()),
+                ("offsets.uint64", offsets.astype("<u8").tobytes()),
             ]:
                 offset = f.tell()
                 fname = name.encode()
