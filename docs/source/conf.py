@@ -60,10 +60,20 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.autosummary',
     'autoapi.extension',
+    'myst_parser',
     'numpydoc',
     'sphinx_gallery.gen_gallery',
     'sphinx_design',
 ]
+
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+    "fieldlist",
+    "html_image",
+    "tasklist",
+]
+myst_heading_anchors = 3
 
 # Suppress known deprecation warnings from dependencies
 # astroid 4.x deprecation - will be fixed when sphinx-autoapi updates for astroid 5.x
